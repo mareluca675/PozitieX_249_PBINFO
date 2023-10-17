@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    ifstream fin("pozitiex.in");
+    ofstream fout("pozitiex.out");
+    
+    long long n, v[10001], k, i, pozx, ok = 0;
+    
+    fin >> k >> n;
+    
+    pozx = n;
+    
+    for(i = 1; i <= n; i++)
+    {
+        fin >> v[i];
+    }
+    
+    for(i = 1; i <= n; i++)
+    {
+        if(v[i] > k)
+        {
+            pozx -- ;
+        }
+		if(v[i] == k)
+        {
+            ok = 1;
+        }
+    }
+    
+    if(ok == 0)
+    {
+    	fout << "NU EXISTA";
+    }
+    else
+    {
+      fout << pozx;
+    }
+
+    return 0;
+}
